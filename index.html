@@ -5,7 +5,9 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
-    <!--Hiro marker with 3d image plus information text-->
+
+    <!--Hiro marker with 3D image plus information text-->
+
         <a-marker preset="hiro">
             <a-entity
             position="0 -1 0"
@@ -16,20 +18,18 @@
             <a-text value="Stabbed in the neck with something sharp yet big like shears, blood on left index finger"></a-text>
         </a-marker>
 
+        <!--Kanji marker with 2D image-->
+
         <a-marker preset="kanji" id="aframe-scene" position="" rotation="" scale="" visible="" material="" arjs-anchor="" arjs-hit-testing="">    
             <a-image id="message" src="dying_message.png" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
         </a-marker>
 
-        <a-marker preset="pattern-letterA.patt" id="aframe-scene" position="" rotation="" scale="" visible="" material="" arjs-anchor="" arjs-hit-testing="">    
-            <a-image id="splatter" src="blood_splatter.png" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
-        </a-marker>
+        <!-- handle marker with my own pattern --> 
+        <a-marker type= 'pattern' url='./letterA.patt'> <a-image src="blood_splatter.png" position="0 0 0" rotation="90 180 0 "> </a-marker>
 
-        <a-marker preset="letterB" id="aframe-scene" position="" rotation="" scale="" visible="" material="" arjs-anchor="" arjs-hit-testing="">    
-            <a-image id="drag" src="drag_marks.png" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" shader="standard" scale="1 1 1" visible="" material="" geometry=""></a-image>
-        </a-marker>
+        <a-marker type= 'pattern' url='./letterB.patt'> <a-image src="drag_marks.png" position="0 0 0" rotation="90 180 0 "> </a-marker>
 
-        <a-marker preset="letterC">
-            <!--a-box position='0 0.5 0' material='color: yellow;'></a-box-->
+        <a-marker type= 'pattern' url='./letterC.patt'>
             <a-text value="Ask the inspector about finding clues from cameras in the opposite building"></a-text>
         </a-marker>
 
